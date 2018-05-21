@@ -43,3 +43,7 @@ html, body{
     border-width: 1px;
   }
 
+  #numberOfWins, #numberOfLosses{
+    color: #964cf2;
+    font-weight: bold;
+  }
