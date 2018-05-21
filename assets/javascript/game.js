@@ -1,42 +1,18 @@
-
 $(document).ready(function () {
-
     //Sets up variables
-    var generatedNumber = 0;
-    var playerSum = 0;
-    var greenNumber = 0;
-    var greenMultiplier = 0;
-    var redNumber = 0;
-    var redMultiplier = 0;
-    var blueNumber = 0;
-    var blueMultiplier = 0;
-    var orangeNumber = 0;
-    var orangeMultiplier = 0;
-    var winTotal = 0;
-    var lossTotal = 0;
-
-    //Generates random variables 
-    var greenNumber = Math.floor(Math.random() * 10) + 1;
-    var redNumber = Math.floor(Math.random() * 10) + 1;
-    var orangeNumber = Math.floor(Math.random() * 10) + 1;
-    var blueNumber = Math.floor(Math.random() * 10) + 1;
-    var greenMultiplier = Math.floor(Math.random() * 5) + 1;
-    console.log("Click the green gem " + greenMultiplier + " times")
-    var redMultiplier = Math.floor(Math.random() * 5) + 1;
-    console.log("Click the red gem " + redMultiplier + " times")
-    var blueMultiplier = Math.floor(Math.random() * 5) + 1;
-    console.log("Click the blue gem " + blueMultiplier + " times")
-    var orangeMultiplier = Math.floor(Math.random() * 5) + 1;
-    console.log("Click the orange gem " + orangeMultiplier + " times")
-
-    //Generates magicNumber
-    var generatedNumber = greenNumber * greenMultiplier + redNumber * redMultiplier + orangeNumber * orangeMultiplier + blueNumber * blueMultiplier;
-    console.log(generatedNumber);
-
-    $("#magicNumber").text(generatedNumber);
-    $("#playerTotal").text(playerSum);
-
-    //Starts a new game
+    var generatedNumber = 0; //number that player will need to match
+    var playerSum = 0; //sum of player's gem clicks 
+    var greenNumber = 0; //number the green gem is worth
+    var greenMultiplier = 0; //number of times the green gem should be clicked
+    var redNumber = 0; //number the red gem is worth
+    var redMultiplier = 0; //number of times the red gem should be clicked
+    var blueNumber = 0; //number the blue gem is worth
+    var blueMultiplier = 0; //number the blue gem should be clicked
+    var orangeNumber = 0; //number the orange gem is worth
+    var orangeMultiplier = 0; //number the orange gem should be clicked
+    var winTotal = 0; //number of wins 
+    var lossTotal = 0; //number of losses 
+    //Resets for a new game
     function newGame() {
         playerSum = 0;
         console.log("This is a NEW game");
@@ -57,6 +33,8 @@ $(document).ready(function () {
         $("#magicNumber").text(generatedNumber);
         $("#playerTotal").text(playerSum);
     }
+    //Calls the newGame function to start Game 1
+    newGame();
     //Display when a player wins 
     function alertWin() {
         alert("Congratulations! You've won!")
@@ -79,51 +57,41 @@ $(document).ready(function () {
         $('#numberOfLosses').text(lossTotal);
         var SlowReset = setTimeout(newGame, 500);
     }
-
     //When a player clicks a gem, the gemNumber will be added to player total.
     $('.blue').on('click', function () {
         playerSum = playerSum + blueNumber;
-        console.log("New playerTotal= " + playerTotal);
         $('#playerTotal').text(playerSum);
-        if (playerSum == generatedNumber){
+        if (playerSum == generatedNumber) {
             youWin();
-        }else if (playerSum > generatedNumber){
+        } else if (playerSum > generatedNumber) {
             youLose();
         }
     });
-
     $('.green').on('click', function () {
         playerSum = playerSum + greenNumber;
-        console.log("New playerTotal= " + playerTotal);
         $('#playerTotal').text(playerSum);
-        if (playerSum == generatedNumber){
+        if (playerSum == generatedNumber) {
             youWin();
-        }else if (playerSum > generatedNumber){
+        } else if (playerSum > generatedNumber) {
             youLose();
         }
     });
-
     $('.red').on('click', function () {
         playerSum = playerSum + redNumber;
-        console.log("New playerTotal= " + playerTotal);
         $('#playerTotal').text(playerSum);
-        if (playerSum == generatedNumber){
+        if (playerSum == generatedNumber) {
             youWin();
-        }else if (playerSum > generatedNumber){
+        } else if (playerSum > generatedNumber) {
             youLose();
         }
     });
-
     $('.orange').on('click', function () {
         playerSum = playerSum + orangeNumber;
-        console.log("New playerTotal= " + playerTotal);
         $('#playerTotal').text(playerSum);
-        if (playerSum == generatedNumber){
+        if (playerSum == generatedNumber) {
             youWin();
-        }else if (playerSum > generatedNumber){
+        } else if (playerSum > generatedNumber) {
             youLose();
         }
     });
-
-
 });
