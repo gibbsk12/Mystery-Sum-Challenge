@@ -25,7 +25,6 @@ html, body{
   .container{
       background-color: white;
       height: 100%;
-
   }
 
   h1, h2{
@@ -47,3 +46,9 @@ html, body{
     color: #964cf2;
     font-weight: bold;
   }
+
+@media only screen and (max-width:768px){
+  .container{
+    height: 180%;
+  }
+}
