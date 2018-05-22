@@ -40,6 +40,72 @@ html, body{
     font-weight: bold;
   }
 
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 5; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    -webkit-animation-name: fadeIn; 
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  background: url("../images/galaxy_crystal\ wallpaper.jpg") no-repeat left;
+  background-size: cover;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid white;
+  width: 480px; 
+  min-height: 240px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 6px 6px darkslategray;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.5s;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+}
+
+.modalClose {
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modalClose:hover,
+.modalClose:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalText {
+  font-size: 72pt;
+  font-family: 'Lobster', cursive;
+  font-weight: 700;
+  background: linear-gradient(180deg, #ff7474, #e3dc8a, #5fe580);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  background-size: 600% 600%;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
 
 @media only screen and (max-width:768px){
   .container{

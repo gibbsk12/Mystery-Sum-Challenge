@@ -35,27 +35,20 @@ $(document).ready(function () {
     }
     //Calls the newGame function to start Game 1
     newGame();
-    //Display when a player wins 
-    function alertWin() {
-        alert("Congratulations! You've won!")
-    }
-    //Display when a player loses
-    function alertLoss() {
-        alert("Sorry, you've lost! Try again!")
-    }
+
     //Add to win count, reset game 
     function youWin() {
         winTotal++;
-        var slowWinAlert = setTimeout(alertWin, 500);
-        $('#numberOfWins').text(winTotal);
-        var SlowReset = setTimeout(newGame, 500);
+        $('#numberOfWins').html(winTotal);
+        alert("Congratulations! You've won!");
+        newGame();
     }
     //Add to loss count, reset game 
     function youLose() {
         lossTotal++;
-        var slowLossAlert = setTimeout(alertLoss, 500);
-        $('#numberOfLosses').text(lossTotal);
-        var SlowReset = setTimeout(newGame, 500);
+        $('#numberOfLosses').html(lossTotal);
+        alert("Sorry, you've lost! Try again!");
+        newGame();   
     }
     //When a player clicks a gem, the gemNumber will be added to player total.
     $('.blue').on('click', function () {
